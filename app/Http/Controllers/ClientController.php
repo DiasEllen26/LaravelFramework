@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
 use Illuminate\Http\Request;
 
-class SiteController extends Controller
+class ClientController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(int $id)
+    public function index()
     {
-        dd($id);
-        return view('Olá mundozinho');
+        $clients = Client::get();
+        dd($clients);
     }
 
     /**
