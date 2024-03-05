@@ -13,7 +13,13 @@ class ClientController extends Controller
     public function index()
     {
         $clients = Client::get();
-        dd($clients);
+        /** Rerotna a view que procura por pasta clients e depois arquivo index. */
+         return view(
+            'clients.index', [
+                /** Manda uma variável clients que vai refletir no front-end, que é a váriavel $clients */
+                'clients' => $clients
+            ]
+            );
     }
 
     /**
