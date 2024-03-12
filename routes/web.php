@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CafeController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
@@ -16,4 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/service/{id}', [SiteController::class, 'index']);
-Route::get('/clients', [ClientController::class, 'index']);
+Route::get('/clients', [ClientController::class, 'index'])->name('clients.index');
+Route::get('/clients/{id}', [ClientController::class, 'show'])->name('clients.show');
+Route::get('/cafes', [CafeController::class, 'index'])->name('cafes.index');
+Route::get('/cafes/{id}', [CafeController::class, 'show'])->name('cafes.show');
+

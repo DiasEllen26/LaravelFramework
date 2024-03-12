@@ -25,30 +25,21 @@
   </div>
 </div>
 
-    <h1 class="text-center">Todos os clientes</h1>
+    <h1 class="text-center">Cliente</h1>
     <div class="container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <td>ID</td>
-                    <td>Nome</td>
-                    <td>Endereço</td>
-                    <td>Ações</td>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($clients as $client)
-                    <tr>
-                        <th>{{ $client->id }}</th>
-                        <td>
-                            <a href="{{ route('clients.show', $client) }}">{{ $client->nome }}</a>
-                        </td>
-                        <td>{{ $client->endereco }}</td>
-                        <td></td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <div class="card">
+            <div class="card-header">
+                Detalhes do Cliente {{ $client->nome }}
+            </div>
+            <div class="card-body">
+                <p><strong>ID: </strong> {{ $client->id }}</p>
+                <p><strong>Nome: </strong> {{ $client->nome }}</p>
+                <p><strong>Endereço: </strong> {{ $client->endereco }}</p>
+                <p><strong>Observação: </strong> {{ $client->observacao }}</p>
+                <br>
+                <a class="btn btn-success" href="{{ route('clients.index') }}">Voltar para a lista de clientes</a>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
