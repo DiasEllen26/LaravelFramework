@@ -26,5 +26,4 @@ class CafeController extends Controller
             ]
         );
     }
-
 }
