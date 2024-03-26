@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CafeController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/service/{id}', [SiteController::class, 'index']);
 Route::get('/clients', [ClientController::class, 'index'])->name('clients.index');
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
 Route::get('/clients/create', [ClientController::class, 'create'])->name('clients.create');
 Route::get('/clients/{id}', [ClientController::class, 'show'])->name('clients.show');
 Route::get('/cafes', [CafeController::class, 'index'])->name('cafes.index');
